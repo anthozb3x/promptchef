@@ -83,9 +83,6 @@ export default function PromptForm({ onPromptGenerated }: { onPromptGenerated?: 
   const [userId, setUserId] = useState<string | null>(null)
   const [accessToken, setAccessToken] = useState<string | null>(null)
 
-  // Pour MVP, pas de preferences avancées
-  const preferences = undefined
-
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
       setUserId(data?.user?.id || null)
@@ -159,7 +156,7 @@ export default function PromptForm({ onPromptGenerated }: { onPromptGenerated?: 
             </Typography>
           </Box>
           <Typography variant="body2" color="text.secondary">
-            Sélectionnez votre cas d'usage et décrivez ce que vous souhaitez obtenir. Notre IA vous aidera à créer le prompt parfait.
+            Sélectionnez votre cas d&apos;usage et décrivez ce que vous souhaitez obtenir. Notre IA vous aidera à créer le prompt parfait.
           </Typography>
         </Paper>
 

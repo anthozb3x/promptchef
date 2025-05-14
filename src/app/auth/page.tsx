@@ -54,7 +54,7 @@ export default function AuthPage() {
             PromptChef
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            Créez des prompts efficaces et personnalisés pour vos outils d'IA préférés.
+            Créez des prompts efficaces et personnalisés pour vos outils d&apos;IA préférés.
           </Typography>
         </Box>
 
@@ -72,7 +72,7 @@ export default function AuthPage() {
                 '&:hover': { textDecoration: 'underline' }
               }}
             >
-              conditions d'utilisation
+              conditions d&apos;utilisation
             </Box>{' '}
             et notre{' '}
             <Box

@@ -37,7 +37,8 @@ export async function POST(req: NextRequest) {
     if (error) throw error
 
     return NextResponse.json({ prompt: generated_prompt })
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 })
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred'
+    return NextResponse.json({ error: errorMessage }, { status: 500 })
   }
 } 

@@ -7,13 +7,22 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import SearchIcon from '@mui/icons-material/Search'
 import toast from 'react-hot-toast'
 
+type Prompt = {
+  id: string
+  use_case: string
+  input_prompt: string
+  generated_prompt: string
+  created_at: string
+  // add other fields as needed
+}
+
 function formatDate(dateString: string) {
   const date = new Date(dateString)
   return date.toLocaleDateString('fr-FR', { year: '2-digit', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })
 }
 
 export default function PromptSearchHistorySidebar({ historyRefreshKey }: { historyRefreshKey?: number }) {
-  const [prompts, setPrompts] = useState<any[]>([])
+  const [prompts, setPrompts] = useState<Prompt[]>([])
   const [search, setSearch] = useState('')
 
   useEffect(() => {

@@ -6,9 +6,10 @@ import { supabase } from '@/lib/supabase'
 import PromptForm from '@/components/PromptForm'
 import PromptSearchHistorySidebar from '@/components/PromptSearchHistorySidebar'
 import { Box, Typography } from '@mui/material'
+import { User } from '@supabase/supabase-js'
 
 export default function Home() {
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<User | null>(null)
   const [historyRefreshKey, setHistoryRefreshKey] = useState(0)
   const router = useRouter()
 
@@ -61,7 +62,7 @@ export default function Home() {
             <span role="img" aria-label="chef">👨‍🍳</span> PromptChef
           </Typography>
           <Typography variant="h5" color="text.secondary" sx={{ mb: 2 }}>
-            Créez des prompts efficaces et personnalisés pour vos outils d'IA préférés.
+            Créez des prompts efficaces et personnalisés pour vos outils d&apos;IA préférés.
           </Typography>
         </Box>
         <PromptForm onPromptGenerated={() => setHistoryRefreshKey(k => k + 1)} />

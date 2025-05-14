@@ -55,9 +55,10 @@ export default function Auth() {
         if (error) throw error
         toast.success('Inscription réussie ! Vérifiez votre email.')
       }
-    } catch (error: any) {
-      setError(error.message)
-      toast.error(error.message)
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Une erreur est survenue'
+      setError(errorMessage)
+      toast.error(errorMessage)
     } finally {
       setLoading(false)
     }
@@ -69,9 +70,10 @@ export default function Auth() {
         provider: 'google',
       })
       if (error) throw error
-    } catch (error: any) {
-      setError(error.message)
-      toast.error(error.message)
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Une erreur est survenue'
+      setError(errorMessage)
+      toast.error(errorMessage)
     }
   }
 
